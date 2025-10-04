@@ -141,6 +141,116 @@
   transform: translateY(-5px);
   transition: all 0.3s ease;
 }
+.social-links-expanded {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links-expanded .icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: white;
+}
+.icon.facebook:hover {
+  background: rgba(59, 89, 152, 0.2);
+  box-shadow: 0 0 25px rgba(59, 89, 152, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.icon.twitter:hover {
+  background: rgba(29, 161, 242, 0.2);
+  box-shadow: 0 0 25px rgba(29, 161, 242, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.icon.instagram:hover {
+  background: rgba(225, 48, 108, 0.2);
+  box-shadow: 0 0 25px rgba(225, 48, 108, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.icon.linkedin:hover {
+  background: rgba(0, 119, 181, 0.2);
+  box-shadow: 0 0 25px rgba(0, 119, 181, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.icon.github:hover {
+  background: rgba(51, 51, 51, 0.2);
+  box-shadow: 0 0 25px rgba(51, 51, 51, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.icon.youtube:hover {
+  background: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.icon.dribbble:hover {
+  background: rgba(234, 76, 137, 0.2);
+  box-shadow: 0 0 25px rgba(234, 76, 137, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.icon.behance:hover {
+  background: rgba(23, 105, 255, 0.2);
+  box-shadow: 0 0 25px rgba(23, 105, 255, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.icon.tiktok:hover {
+  background: rgba(1, 1, 1, 0.2);
+  box-shadow: 0 0 25px rgba(1, 1, 1, 0.5);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+
+.social-links-expanded .icon span {
+  position: absolute;
+  top: -30px;
+  background: #000;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.social-links-expanded .icon:hover span {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.icon.facebook { background: #3b5998; }
+.icon.twitter { background: #1da1f2; }
+.icon.instagram { background: #e1306c; }
+.icon.linkedin { background: #0077b5; }
+.icon.youtube { background: #ff0000; }
+.icon.tiktok { background: #010101; }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -163,5 +273,18 @@
     font-size: 1rem;
   }
 }
+   .social-links-expanded a {
+    width: 37px !important;
+    font-size: 12px !important;
+    gap: 6px !important;
+  }
+
+  .social-links-expanded a svg {
+    font-size: 15px !important;
+  }
+
+  .social-links-expanded span {
+    font-size: 12px !important;
+  }
 
 }

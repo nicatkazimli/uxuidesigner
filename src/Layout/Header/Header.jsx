@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import './Header.css';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  FaHome,
+  FaUser,
+  FaBriefcase,
+  FaEnvelope,
+} from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./Header.css";
 
 const Header = () => {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState(location.pathname);
+
+  const navItems = [
+    { path: "/", icon: <FaHome />, label: "Əsas" },
+    { path: "/about", icon: <FaUser />, label: "Haqqımda" },
+    { path: "/portfolio", icon: <FaBriefcase />, label: "Portfolio" },
+    { path: "/contact", icon: <FaEnvelope />, label: "Əlaqə" },
+  ];
 
   return (
     <header className="header">
@@ -17,13 +32,36 @@ const Header = () => {
         <h1 className="name">Tural Mammadli</h1>
       </div>
 
-      <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>Əsas Səhifə</Link>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>Haqqımda</Link>
-        <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-        <Link to="/contact" onClick={() => setMenuOpen(false)}>Əlaqə</Link>
+      {/* ==== TAB BAR ==== */}
+      <nav className={`tab-bar ${menuOpen ? "open" : ""}`}>
+        <ul>
+          {navItems.map((item) => (
+            <li
+              key={item.path}
+              className={activeTab === item.path ? "active" : ""}
+              onClick={() => {
+                setActiveTab(item.path);
+                setMenuOpen(false);
+              }}
+            >
+              <Link to={item.path}>
+                <span className="icon">{item.icon}</span>
+                <span className="label">{item.label}</span>
+              </Link>
+            </li>
+          ))}
+          <div
+            className="indicator"
+            style={{
+              transform: `translateX(${navItems.findIndex(
+                (i) => i.path === activeTab
+              ) * 100}%)`,
+            }}
+          />
+        </ul>
       </nav>
 
+      {/* ==== MENU ICON ==== */}
       <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>

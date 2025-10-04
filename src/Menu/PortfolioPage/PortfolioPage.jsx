@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import Slider from 'react-slick'; // <-- YENİ
 import './PortfolioPage.css';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const projectsData = [
   // === Web Design ===
@@ -65,7 +68,6 @@ const projectsData = [
   },
 ];
 
-
 const PortfolioPage = () => {
   const [filter, setFilter] = useState('All');
   const categories = ['All', 'Web Design', 'UI/UX', 'Frontend'];
@@ -74,6 +76,34 @@ const PortfolioPage = () => {
     filter === 'All'
       ? projectsData
       : projectsData.filter((p) => p.category === filter);
+
+  const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: "0px",
+  focusOnSelect: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        centerMode: true,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        centerMode: false,
+      },
+    },
+  ],
+};
+
 
   return (
     <div className="portfolio-page">
@@ -91,7 +121,7 @@ const PortfolioPage = () => {
         ))}
       </div>
 
-      <div className="portfolio-grid">
+      <Slider {...settings}>
         {filteredProjects.map((project) => (
           <div key={project.id} className="portfolio-item">
             <div className="image-wrapper">
@@ -103,7 +133,7 @@ const PortfolioPage = () => {
             </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };

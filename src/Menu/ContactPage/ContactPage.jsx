@@ -1,5 +1,18 @@
 import React from "react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaInstagram, FaDribbble } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaLinkedin,
+  FaInstagram,
+  FaDribbble,
+  FaFacebookF,
+  FaTwitter,
+  FaGithub,
+  FaYoutube,
+  FaBehance,
+  FaTiktok,
+} from "react-icons/fa";
 import "./ContactPage.css";
 
 const ContactPage = () => {
@@ -32,21 +45,24 @@ const ContactPage = () => {
         <div className="contact-info hover-box">
           <h2>Əlaqə Məlumatı</h2>
           <div className="info-item">
-            <FaEnvelope /> 
+            <FaEnvelope />
             <a href="mailto:tural.design@example.com">tural.design@example.com</a>
           </div>
           <div className="info-item">
-            <FaPhone /> 
+            <FaPhone />
             <a href="tel:+994501234567">+994 50 123 45 67</a>
           </div>
           <div className="info-item">
             <FaMapMarkerAlt /> <span>Bakı, Azərbaycan</span>
           </div>
 
-          <div className="social-links">
-            <a href="#"><FaLinkedin /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaDribbble /></a>
+          <div className="social-links-expanded">
+            <a className="icon facebook" href="#"><FaFacebookF /><span>Facebook</span></a>
+            <a className="icon twitter" href="#"><FaTwitter /><span>Twitter</span></a>
+            <a className="icon instagram" href="#"><FaInstagram /><span>Instagram</span></a>
+            <a className="icon linkedin" href="#"><FaLinkedin /><span>LinkedIn</span></a>
+            <a className="icon youtube" href="#"><FaYoutube /><span>YouTube</span></a>
+            <a className="icon tiktok" href="#"><FaTiktok /><span>TikTok</span></a>
           </div>
         </div>
       </section>
