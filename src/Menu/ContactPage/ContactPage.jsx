@@ -1,0 +1,57 @@
+import React from "react";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaInstagram, FaDribbble } from "react-icons/fa";
+import "./ContactPage.css";
+
+const ContactPage = () => {
+  return (
+    <div className="contact-container">
+      <section className="contact-header">
+        <h1>Gəlin Birlikdə İşləyək</h1>
+        <p>
+          Hər zaman əlaqə saxlamağa açığam — yeni layihələr, əməkdaşlıqlar və
+          yaradıcı müzakirələr üçün mənə yazın.
+        </p>
+      </section>
+
+      <section className="contact-content">
+        <div className="contact-form hover-box">
+          <h2>Mesaj Göndər</h2>
+          <form
+            action="mailto:tural.design@example.com"
+            method="POST"
+            encType="text/plain"
+          >
+            <input type="text" name="Name" placeholder="Adınız" required />
+            <input type="email" name="Email" placeholder="Emailiniz" required />
+            <input type="text" name="Subject" placeholder="Mövzu" />
+            <textarea name="Message" rows="5" placeholder="Mesajınız"></textarea>
+            <button type="submit">Göndər</button>
+          </form>
+        </div>
+
+        <div className="contact-info hover-box">
+          <h2>Əlaqə Məlumatı</h2>
+          <div className="info-item">
+            <FaEnvelope /> 
+            <a href="mailto:tural.design@example.com">tural.design@example.com</a>
+          </div>
+          <div className="info-item">
+            <FaPhone /> 
+            <a href="tel:+994501234567">+994 50 123 45 67</a>
+          </div>
+          <div className="info-item">
+            <FaMapMarkerAlt /> <span>Bakı, Azərbaycan</span>
+          </div>
+
+          <div className="social-links">
+            <a href="#"><FaLinkedin /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaDribbble /></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ContactPage;

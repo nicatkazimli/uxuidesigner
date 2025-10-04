@@ -1,0 +1,112 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Urbanist', sans-serif;
+}
+
+/* Ümumi header üslubu */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to right, #1a1a1a, #121212);
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Sol hissə: logo və ad */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 10%;
+  margin-right: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+/* Naviqasiya linkləri */
+.nav-links {
+  display: flex;
+  gap: 40px;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  margin-right: 25px;
+}
+
+.nav-links a {
+  color: #f39c12;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.8s ease;
+  box-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  color: #1bc396;
+  border: 2px solid #f39c12;
+ box-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+}
+
+/* Mobil menyu ikonu */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobil görünüş üçün media query */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: #121212;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links a {
+    width: 150px;
+    text-align: center;
+  }
+  .header-left .name {
+    width: 150px;
+    font-size: 20px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

@@ -1,0 +1,116 @@
+.about-container {
+  padding: 60px 30px;
+  background: linear-gradient(to right, #1c1c1c, #2b2b2b, #3d3d3d);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Intro Bölməsi */
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.photo-box img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(243, 156, 18, 0.4);
+  transition: transform 0.4s ease;
+}
+.photo-box img:hover {
+  transform: scale(1.05);
+}
+
+.intro-text h1 {
+  font-size: 2.2rem;
+  color: #f39c12;
+}
+
+.intro-text blockquote {
+  font-style: italic;
+  color: #ccc;
+  margin: 15px 0;
+  border-left: 4px solid #f39c12;
+  padding-left: 15px;
+}
+
+.intro-text p {
+  color: #ddd;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Timeline */
+.timeline-section {
+  margin-bottom: 60px;
+}
+.timeline-section h2 {
+  color: #f39c12;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.timeline-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.timeline-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 10px rgba(243, 156, 18, 0.3);
+}
+.timeline-item span {
+  color: #f39c12;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Fun Facts */
+.fun-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.fact-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  color: #f2f2f2;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+.fact-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(243, 156, 18, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Mobil uyğunluq */
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-text p {
+    margin: 0 auto;
+  }
+
+  .photo-box img {
+    width: 220px;
+    height: 220px;
+  }
+}
