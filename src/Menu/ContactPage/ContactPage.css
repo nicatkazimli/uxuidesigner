@@ -144,11 +144,24 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
     align-items: center;
+    gap: 30px; /* aralıq verək */
   }
-  .contact-info{
-    width: 400px;
+
+  .contact-form,
+  .contact-info {
+    width: 90%; /* genişliyi mobil üçün daha uyğun edirik */
+    max-width: 400px; /* max limit */
   }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 1rem;
+  }
+}
+
 }
