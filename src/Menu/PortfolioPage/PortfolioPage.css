@@ -113,11 +113,26 @@
   }
 
   .filter-buttons {
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px; /* azaldılmış gap */
   }
 
   .filter-btn {
-    font-size: 14px;
-    padding: 8px 15px;
+    font-size: 13px; /* bir az kiçik font */
+    padding: 6px 12px; /* kiçildilmiş padding */
+    flex: 1 1 40%; /* 2 düymə yan-yana sığması üçün flex */
+    max-width: 120px; /* maksimum genişlik */
+    text-align: center;
+  }
+
+  .portfolio-grid {
+    gap: 15px; /* mobil grid üçün gap azaldıldı */
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: auto;
   }
 }
