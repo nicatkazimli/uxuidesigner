@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Slider from 'react-slick'; // <-- YENİ
+import Slider from 'react-slick';
 import './PortfolioPage.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -11,14 +11,14 @@ const projectsData = [
     title: 'Luxury Jewellery Website',
     category: 'Web Design',
     image:
-      'https://cdn.dribbble.com/userupload/44803392/file/337158934d9892c816c76f4383a5cd1a.png?format=webp&resize=400x300&vertical=center',
+      'https://cdn.dribbble.com/userupload/43906954/file/original-1357e732d25877450781922a33774e13.jpg?format=webp&resize=400x300&vertical=center',
   },
   {
     id: 2,
     title: 'Minimal Fashion Store',
     category: 'Web Design',
     image:
-      'https://mir-s3-cdn-cf.behance.net/projects/404/562b58235256135.Y3JvcCwxMzQzLDEwNTEsNjksMA.jpg',
+      'https://cdn.dribbble.com/userupload/44843149/file/c72b3f6502e815c2ab256672697ace32.png?format=webp&resize=400x300&vertical=center',
   },
   {
     id: 3,
@@ -78,32 +78,39 @@ const PortfolioPage = () => {
       : projectsData.filter((p) => p.category === filter);
 
   const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  centerMode: true,
-  centerPadding: "0px",
-  focusOnSelect: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        centerMode: true,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "0px",
+    focusOnSelect: true,
+    adaptiveHeight: false,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+          adaptiveHeight: false,
+        },
       },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        centerMode: false,
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: "0px",
+          dots: true,
+          arrows: true,
+          adaptiveHeight: false,
+        },
       },
-    },
-  ],
-};
-
+    ],
+  };
 
   return (
     <div className="portfolio-page">
@@ -121,9 +128,9 @@ const PortfolioPage = () => {
         ))}
       </div>
 
-      <Slider {...settings}>
+      <Slider  {...settings}>
         {filteredProjects.map((project) => (
-          <div key={project.id} className="portfolio-item">
+          <div key={project.id}  className="portfolio-item">
             <div className="image-wrapper">
               <img src={project.image} alt={project.title} />
               <div className="overlay">
